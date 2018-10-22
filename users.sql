@@ -1,0 +1,15 @@
+CREATE TABLE users (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    mail VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(80) NOT NULL,
+    pseudo VARCHAR(20) NOT NULL UNIQUE,
+    adress VARCHAR(255) NULL,
+    cp INT(6) UNSIGNED NULL,
+    city VARCHAR(60) NULL,
+    country VARCHAR(50) NULL,
+    phone_numbers VARCHAR(15) NULL,
+    house_numbers VARCHAR(15) NULL,
+    signin_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+) CHARACTER SET 'utf8'
+ENGINE = INNODB;

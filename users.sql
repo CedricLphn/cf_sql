@@ -3,7 +3,7 @@ CREATE TABLE users (
     mail VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(80) NOT NULL,
     pseudo VARCHAR(20) NOT NULL UNIQUE,
-    adress VARCHAR(255) NULL,
+    address VARCHAR(255) NULL,
     cp INT(6) UNSIGNED NULL,
     city VARCHAR(60) NULL,
     country VARCHAR(50) NULL,
@@ -13,3 +13,32 @@ CREATE TABLE users (
     PRIMARY KEY (id)
 ) CHARACTER SET 'utf8'
 ENGINE = INNODB;
+
+INSERT INTO users (mail, password, pseudo, address) VALUE
+('bobleponge@ananas.com', 'azertyuiop', 'Bob'),
+('fbdsjhf@jfhds.com', 'azertyiop^', 'Patrick'),
+('jfhjsd@hfdjfs.fr', 'azertyuiop', 'Michel'),
+('fdsjf@fndj.com', 'azertyuiop', 'Jean'),
+('fdsfjsk@jriezf.fr', 'azertyuiop', 'azerty'),
+('lsjrse@jfhdj.ca', 'azertyuiop', 'Albert'),
+('jrhs@knfjksf.com', 'azertyuiop', 'Alex'),
+('thjfns@oudfis.com', 'azertyuiop', 'Alexandre'),
+('bfjkef@oed.fr', 'zertyuiop', 'Zire'),
+('isejriz@iezd.com', 'azertyuiop', 'Paul'),
+('cnjk@kjfhsk.com', 'azertyuiop', 'Haha'),
+('ldskd@ndjsknf.com', 'azertyuiop', 'Hihi'),
+('kjfdskfj@oksdo.com', 'azertyuiop', 'Hoho'),
+('jdsf@oidkd.fr', 'azertyuiop', 'Hehe'),
+('jdqk@lposd.com', 'aertyuiop', 'Huhu'),
+('lskd&@dnf.fr', 'azertyuiop', 'Hyhy'),
+('kejrz@ksdo.fr', 'azertyuiop', 'Poppy'),
+('dkjnds@kljdf.fr', 'azertyuiop', 'Riven'),
+('kfnskf@dksdnjd.com', 'azertyuiop', 'Trynda'),
+('nfkfe@ldkfs.com', 'azertyuiop', 'Yasuo'),
+('kdjfsk@dddd.com', 'azyuiop', 'Wukong'),
+('kdjfks@lkdsl.com', 'azertyuiop', 'Janna'),
+('jhfzk@lldsp.com', 'aertyuiop', 'Bloup'),
+('NDFJSK@lkdsk.fr', 'azertyuiop', 'Yi'),
+('kfsjfk@dddd.fr','azertyuiop', 'Urgot'),
+
+      

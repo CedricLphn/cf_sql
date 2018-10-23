@@ -43,4 +43,5 @@ INSERT INTO users (mail, password, pseudo) VALUES
 ('NDFJSK@lkdsk.fr', 'azertyuiop', 'Yi'),
 ('kfsjfk@dddd.fr','azertyuiop', 'Urgot');
   
-      
+/* création d'un premier utilisateur */
+INSERT INTO users(mail, password, pseudo) VALUES ('bobleponge@ananas.com', 'azertyuiop', 'Bob');    

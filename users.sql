@@ -44,4 +44,8 @@ INSERT INTO users (mail, password, pseudo) VALUES
 ('kfsjfk@dddd.fr','azertyuiop', 'Urgot');
   
 /* création d'un premier utilisateur */
-INSERT INTO users(mail, password, pseudo) VALUES ('bobleponge@ananas.com', 'azertyuiop', 'Bob');    
+INSERT INTO users(mail, password, pseudo) VALUES ('boblepikkonge@ananas.com', 'azertyuiop', 'Boblegris'); 
+
+UPDATE users
+SET address='4 rue NULE', cp= '75010', city= 'PARIS', country= 'FRANCE', phone_numbers='06 32 45 67 90', house_numbers='01 12 13 14 15'
+WHERE id= 26;

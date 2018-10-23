@@ -8,6 +8,11 @@ CREATE TABLE messages (
 )
 ENGINE = INNODB;
 
+ALTER TABLE messages
+ADD FULLTEXT index_content (content);
+
+/* Peuplage de la table message (story 2) */
+
 INSERT INTO messages(id_sender, id_receiver, content, send_hour_date) VALUES 
 ('19','22','Aut repudiandae molestiae maxime. Dolorem aut nihil ut incidunt. Temporibus ullam exercitationem illum.','1986-07-15 06:58:07'),
 ('10','12','Facere consectetur in assumenda saepe vel eos consequatur. Culpa asperiores explicabo qui non quia. Fugit tempora molestias nihil.','2014-03-16 15:08:32'),

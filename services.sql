@@ -49,3 +49,27 @@ VALUES ('1','vente1','vente de motos','72 T RUE BLABLA','75018','paris','france'
 ('24','vente24','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
 ('25','vente25','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL);
 
+/* JE VEUX créer la requête pour créer un service et le proposer à la communauté */
+
+INSERT INTO services(id_user, name, description, address, cp, city, country, more_info) VALUES(
+    '3', 'Vente de beuh', 'je vends de la beuh 10E/le gramme', 'Police national', '75010', 'Paris', 'France', 'Voir avec mon dealer'
+);
+
+/* Story 10: add index */
+
+ALTER TABLE services
+ADD INDEX index_name(name),
+ADD INDEX index_date(date_hour);
+
+/* The hardest story 11 */
+
+SELECT S.*, U.pseudo, U.mail, U.phone_numbers, SU.*
+FROM services AS S
+LEFT JOIN users as U
+ON S.id_user = U.id
+LEFT JOIN services_users AS SU
+ON SU.id_user <> U.id
+WHERE S.id = 3
+ORDER BY S.date_hour DESC,
+S.city DESC,
+S.name ASC LIMIT 1;

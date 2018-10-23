@@ -14,9 +14,9 @@ CREATE TABLE users (
 ) CHARACTER SET 'utf8'
 ENGINE = INNODB;
 
-INSERT INTO users (mail, password, pseudo, address) VALUE
+INSERT INTO users (mail, password, pseudo) VALUES
 ('bobleponge@ananas.com', 'azertyuiop', 'Bob'),
-('fbdsjhf@jfhds.com', 'azertyiop^', 'Patrick'),
+('fbdsjhf@jfhds.com', 'azertyiopoo', 'Patrick'),
 ('jfhjsd@hfdjfs.fr', 'azertyuiop', 'Michel'),
 ('fdsjf@fndj.com', 'azertyuiop', 'Jean'),
 ('fdsfjsk@jriezf.fr', 'azertyuiop', 'azerty'),
@@ -39,6 +39,6 @@ INSERT INTO users (mail, password, pseudo, address) VALUE
 ('kdjfks@lkdsl.com', 'azertyuiop', 'Janna'),
 ('jhfzk@lldsp.com', 'aertyuiop', 'Bloup'),
 ('NDFJSK@lkdsk.fr', 'azertyuiop', 'Yi'),
-('kfsjfk@dddd.fr','azertyuiop', 'Urgot'),
+('kfsjfk@dddd.fr','azertyuiop', 'Urgot');
 
       

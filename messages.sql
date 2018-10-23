@@ -1,10 +1,14 @@
+DROP TABLE IF EXISTS messages;
+
 CREATE TABLE messages (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     id_sender INT UNSIGNED NOT NULL,
     id_receiver INT UNSIGNED NOT NULL,
     content TEXT NOT NULL ,
     send_hour_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
+    CONSTRAINT fk_id_sender FOREIGN KEY (id_sender) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_id_receiver FOREIGN KEY (id_receiver) REFERENCES users(id) ON DELETE RESTRICT
 )
 ENGINE = INNODB;
 
@@ -44,3 +48,17 @@ INSERT INTO messages(id_sender, id_receiver, content, send_hour_date) VALUES
 ('19','8','Perspiciatis a voluptate in voluptatem optio omnis. Perspiciatis voluptatibus illum amet id. Id enim eaque quis a voluptatem iure. Facere pariatur rem distinctio sed perspiciatis voluptas.','1971-07-04 08:46:58'),
 ('24','25','Laborum veniam eos velit voluptatem assumenda dolorum numquam. Ea et occaecati id. Laboriosam quae quo vel nihil ut aut iusto.','1981-08-13 23:00:36'),
 ('18','5','Aliquam fuga ad aut. Et dolor explicabo deserunt unde aliquam quidem debitis magnam. Voluptate aut nisi distinctio aspernatur. Sit corporis sit molestias iure ex.','1990-12-02 00:12:05'); 
+
+/* Story 7 */
+
+INSERT INTO messages(id_sender, id_receiver, content) VALUES
+(1, 22, "Comme dirais Lorie: C'est le weekend");
+
+/* Story 8 */
+
+SELECT * FROM messages WHERE id_sender = 19;
+
+/* Story 9 */
+
+SELECT * FROM messages WHERE id_sender = 19 AND id_receiver = 22;
+

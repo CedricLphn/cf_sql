@@ -1,7 +1,8 @@
---création de tables services--
-CREATE DATABASE cf_sql CHARACTER SET ‘utf8’;
+/* Drop table if exist */ 
+DROP TABLE IF EXISTS services; 
 
-USE cf_sql;
+/* création de la table services */
+
 
 CREATE TABLE services(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -14,12 +15,13 @@ CREATE TABLE services(
     country VARCHAR(60) NOT NULL,
     date_hour DATETIME DEFAULT CURRENT_TIMESTAMP,
     more_info TEXT,
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
+    CONSTRAINT fk_user_id FOREIGN KEY (id_user) REFERENCES users(id) ON DELETE CASCADE
 )
 CHARACTER SET 'utf8'
 ENGINE=INNODB;
 
---Ajout de données en spécifiant les colonnes--
+/* Ajout de données en spécifiant les colonnes */
 INSERT INTO services (id_user,name,description,address,cp,city,country,more_info)
 VALUES ('1','vente1','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
 ('2','vente2','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),

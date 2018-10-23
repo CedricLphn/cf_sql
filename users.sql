@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS users
+
 CREATE TABLE users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     mail VARCHAR(100) NOT NULL UNIQUE,
@@ -40,5 +42,5 @@ INSERT INTO users (mail, password, pseudo) VALUES
 ('jhfzk@lldsp.com', 'aertyuiop', 'Bloup'),
 ('NDFJSK@lkdsk.fr', 'azertyuiop', 'Yi'),
 ('kfsjfk@dddd.fr','azertyuiop', 'Urgot');
-
+  
       

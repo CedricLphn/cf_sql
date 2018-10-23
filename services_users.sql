@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS services_users
+
 CREATE TABLE services_users(
 id INT UNSIGNED NOT NULL AUTO_INCREMENT,
 id_service INT UNSIGNED NOT NULL,

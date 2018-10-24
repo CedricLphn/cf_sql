@@ -93,3 +93,24 @@ LEFT JOIN services AS S
 ON S.id_user = users.id
 WHERE users.id = 10
 ORDER BY S.date_hour, S.city DESC, S.name ASC
+
+/* Story 17 */
+
+SELECT S.*, 
+    (SELECT COUNT(SU.id)
+    FROM services_users AS SU
+    INNER JOIN users
+    ON SU.id_user = users.id WHERE users.id=10)
+AS TOTAL
+FROM services_users AS SU
+INNER JOIN users 
+ON users.id = SU.id_user
+LEFT JOIN services AS S
+ON S.id_user = users.id
+WHERE users.id = 10 AND
+(SELECT date_hour
+FROM services
+WHERE id_user = 10
+ORDER BY date_hour ASC)
+ORDER BY S.date_hour, S.city DESC, S.name ASC
+LIMIT 1

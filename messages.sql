@@ -1,3 +1,4 @@
+/* Création du table message avec clé primaire et deux clés étrangéres (story 1) */
 DROP TABLE IF EXISTS messages;
 
 CREATE TABLE messages (
@@ -49,16 +50,16 @@ INSERT INTO messages(id_sender, id_receiver, content, send_hour_date) VALUES
 ('24','25','Laborum veniam eos velit voluptatem assumenda dolorum numquam. Ea et occaecati id. Laboriosam quae quo vel nihil ut aut iusto.','1981-08-13 23:00:36'),
 ('18','5','Aliquam fuga ad aut. Et dolor explicabo deserunt unde aliquam quidem debitis magnam. Voluptate aut nisi distinctio aspernatur. Sit corporis sit molestias iure ex.','1990-12-02 00:12:05'); 
 
-/* Story 7 */
+/* Story 7 modification de données dans la table message */
 
 INSERT INTO messages(id_sender, id_receiver, content) VALUES
 (1, 22, "Comme dirais Lorie: C'est le weekend");
 
-/* Story 8 */
+/* Story 8 affichage de message  */
 
 SELECT * FROM messages WHERE id_sender = 19;
 
-/* Story 9 */
+/* Story 9  affichage d'une conversation*/
 
 SELECT * FROM messages WHERE id_sender = 19 AND id_receiver = 22;
 

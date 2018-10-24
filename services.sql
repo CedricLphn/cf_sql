@@ -55,7 +55,7 @@ INSERT INTO services(id_user, name, description, address, cp, city, country, mor
     '3', 'Vente de beuh', 'je vends de la beuh 10E/le gramme', 'Police national', '75010', 'Paris', 'France', 'Voir avec mon dealer'
 );
 
-/* Story 10: add index */
+/* Story 10: add index  sur les colonnes name/date_hour*/
 
 ALTER TABLE services
 ADD INDEX index_name(name),

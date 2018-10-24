@@ -55,21 +55,41 @@ INSERT INTO services(id_user, name, description, address, cp, city, country, mor
     '3', 'Vente de beuh', 'je vends de la beuh 10E/le gramme', 'Police national', '75010', 'Paris', 'France', 'Voir avec mon dealer'
 );
 
-/* Story 10: add index  sur les colonnes name/date_hour*/
+/* The hardest story 10: add index  sur les colonnes name/date_hour*/
 
 ALTER TABLE services
-ADD INDEX index_name(name),
-ADD INDEX index_date(date_hour);
+ADD INDEX index_name(name);
 
-/* The hardest story 11 */
-
-SELECT S.*, U.pseudo, U.mail, U.phone_numbers, SU.*
+SELECT S.*
 FROM services AS S
-LEFT JOIN users as U
-ON S.id_user = U.id
-LEFT JOIN services_users AS SU
-ON SU.id_user <> U.id
-WHERE S.id = 3
-ORDER BY S.date_hour DESC,
-S.city DESC,
-S.name ASC LIMIT 1;
+WHERE S.id NOT IN (SELECT id_service FROM services_users)
+ORDER BY date_hour, city DESC, name ASC
+
+/* story 11 TU PEUX DETAILLER LES STORYS STEUPLAIT */
+
+SELECT S.*, U.pseudo, U.mail,  U.phone_numbers
+FROM services AS S
+INNER JOIN users as U ON S.id_user = U.id
+WHERE S.id IN (SELECT id_service FROM services_users) AND S.id = 26
+ORDER BY date_hour, city DESC, name ASC
+
+/* Story 12 */
+
+DELETE from services
+WHERE id = 19;
+
+/* Story 16 */
+
+SELECT S.*, 
+    (SELECT COUNT(SU.id)
+    FROM services_users AS SU
+    INNER JOIN users
+    ON SU.id_user = users.id WHERE users.id=10)
+AS TOTAL
+FROM services_users AS SU
+INNER JOIN users 
+ON users.id = SU.id_user
+LEFT JOIN services AS S
+ON S.id_user = users.id
+WHERE users.id = 10
+ORDER BY S.date_hour, S.city DESC, S.name ASC

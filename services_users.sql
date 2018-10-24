@@ -15,9 +15,9 @@ INSERT INTO services_users (id_user, id_service, sign_date_hour)
 VALUES
 	(2 , 5 , '2018-01-08'),
 	(13 , 12 , '2018-02-15'),
-	(24 , 19 , '2018-03-06'),
-	(15 , 11 , '2018-04-01'),
-	(1 , 15 , '2018-05-22'),
+	(10 , 19 , '2018-03-06'),
+	(10 , 11 , '2018-04-01'),
+	(10 , 15 , '2018-05-22'),
 	(4 , 13 , '2018-06-04'),
 	(6 , 2 , '2018-07-12'),
 	(9 , 9 , '2018-08-19'),
@@ -27,3 +27,9 @@ VALUES
 /* Story 6 */
 
 INSERT INTO services_users(id_user, id_service) VALUES(3, 8);
+
+/* Story 13 */
+
+DELETE FROM services_users 
+WHERE id = 2, id_user= 13, id_service = 12;  
+

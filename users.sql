@@ -49,3 +49,8 @@ INSERT INTO users(mail, password, pseudo) VALUES ('boblepikkonge@ananas.com', 'a
 UPDATE users
 SET address='4 rue NULE', cp= '75010', city= 'PARIS', country= 'FRANCE', phone_numbers='06 32 45 67 90', house_numbers='01 12 13 14 15'
 WHERE id= 26;
+
+/* Add index : mail */
+
+ALTER TABLE users
+ADD INDEX(mail);

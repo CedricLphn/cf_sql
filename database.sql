@@ -1,21 +1,3 @@
 CREATE DATABASE cf_sql CHARACTER SET ‘utf8’;
 
 USE cf_sql;
-
-
-CREATE TABLE services(
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    id_user INT UNSIGNED NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    description TEXT NOT NULL,
-    address VARCHAR(255) NOT NULL,
-    cp INT(6) UNSIGNED NOT NULL,
-    city VARCHAR(50) NOT NULL,
-    country VARCHAR(60) NOT NULL,
-    date_hour DATETIME DEFAULT CURRENT_TIMESTAMP,
-    more_info TEXT,
-    PRIMARY KEY(id)
-)
-CHARACTER SET 'utf8'
-ENGINE=INNODB;
-

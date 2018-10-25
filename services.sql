@@ -115,10 +115,67 @@ ORDER BY date_hour ASC)
 ORDER BY S.date_hour, S.city DESC, S.name ASC
 LIMIT 1
 
-/* Story 18 */
+/* Story 18 : The Hell of SQL */
 
-SELECT m.month,
-U.pseudo
+
+--- IDEE 1
+
+(SELECT *, MONTH(SU.sign_date_hour) AS mois,  u.pseudo, COUNT(SU.id) AS participation
+FROM services_users AS SU 
+LEFT JOIN users as U
+ON SU.id_user = U.id
+WHERE SU.id_user=10
+GROUP BY MONTH(sign_date_hour))
+UNION
+(SELECT m.month AS mois, 
+(SELECT pseudo FROM users WHERE id=10),
+(SELECT COUNT(case when SU.id is null then 1 end) AS participation
+FROM services_users AS SU   
+WHERE SU.id_user=10
+GROUP BY MONTH(SU.sign_date_hour)
+LIMIT 1
+) AS participation
+FROM (
+SELECT 01 AS
+MONTH
+UNION SELECT 02 AS
+MONTH
+UNION SELECT 03 AS
+MONTH
+UNION SELECT 04 AS
+MONTH
+UNION SELECT 05 AS
+MONTH
+UNION SELECT 06 AS
+MONTH
+UNION SELECT 07 AS
+MONTH
+UNION SELECT 08 AS
+MONTH
+UNION SELECT 09 AS
+MONTH
+UNION SELECT 10 AS
+MONTH
+UNION SELECT 11 AS
+MONTH
+UNION SELECT 12 AS
+MONTH
+) as m
+GROUP BY m.month
+HAVING SUM(mois) > 1 )
+ORDER BY mois
+
+--HAVING (((SUM(1)))> 2))
+
+--- IDEE 2
+
+(SELECT m.month, 
+(SELECT pseudo FROM users WHERE id=10),
+(SELECT COUNT(SU.id) AS participation
+FROM services_users AS SU   
+WHERE SU.id_user=10
+GROUP BY MONTH(sign_date_hour)
+LIMIT 1) AS participation
 FROM (
 SELECT 01 AS
 MONTH
@@ -145,23 +202,41 @@ MONTH
 UNION SELECT 12 AS
 MONTH
 ) AS m
-LEFT JOIN services_users ON m.month = services_users.sign_date_hour
-LEFT JOIN users AS U ON services_users.id_user = U.id
+GROUP BY m.month)
 
+--- IDEE 3
 
-
-
-SELECT services.id as Mois, u.pseudo, COUNT(SU.id) AS participation
-FROM services_users AS SU 
-LEFT JOIN users as U
-ON SU.id_user = U.id
-
+SELECT m.month,
+(SELECT pseudo FROM users WHERE id=10) pseudo,
+(SELECT COUNT(SU.id)
+FROM services_users AS SU   
 WHERE SU.id_user=10
-GROUP BY MONTH(sign_date_hour)
-
-
-
-
-
-
-
+GROUP BY MONTH(sign_date_hour)) participation
+FROM (
+SELECT 01 AS
+MONTH
+UNION SELECT 02 AS
+MONTH
+UNION SELECT 03 AS
+MONTH
+UNION SELECT 04 AS
+MONTH
+UNION SELECT 05 AS
+MONTH
+UNION SELECT 06 AS
+MONTH
+UNION SELECT 07 AS
+MONTH
+UNION SELECT 08 AS
+MONTH
+UNION SELECT 09 AS
+MONTH
+UNION SELECT 10 AS
+MONTH
+UNION SELECT 11 AS
+MONTH
+UNION SELECT 12 AS
+MONTH
+) AS m
+GROUP BY m.month
+--GROUP BY MONTH(sign_date_hour)

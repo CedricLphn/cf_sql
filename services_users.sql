@@ -31,5 +31,5 @@ INSERT INTO services_users(id_user, id_service) VALUES(3, 8);
 /* Story 13 */
 
 DELETE FROM services_users 
-WHERE id = 2, id_user= 13, id_service = 12;  
+WHERE id = 2 AND id_user= 13 AND id_service = 12;  
 

@@ -22,32 +22,32 @@ CHARACTER SET 'utf8'
 ENGINE=INNODB;
 
 /* Ajout de données en spécifiant les colonnes */
-INSERT INTO services (id_user,name,description,address,cp,city,country,more_info)
-VALUES ('1','vente1','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('2','vente2','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('3','vente3','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('4','vente4','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('5','vente5','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('6','vente6','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('7','vente7','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('8','vente8','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('9','vente9','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('10','vente10','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('11','vente11','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('12','vente12','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('13','vente13','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('14','vente14','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('15','vente15','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('16','vente16','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('17','vente17','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('18','vente18','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('19','vente19','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('20','vente10','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('21','vente21','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('22','vente22','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('23','vente23','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('24','vente24','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL),
-('25','vente25','vente de motos','72 T RUE BLABLA','75018','paris','france',NULL);
+INSERT INTO services (id_user,name,description,address,cp,city,country,date_hour)
+VALUES ('1','vente1','vente de motos','72 T RUE BLABLA','75018','paris','france','2016-01-08'),
+('2','vente2','vente de motos','72 T RUE BLABLA','75018','paris','france','2018-01-08'),
+('3','vente3','vente de motos','72 T RUE BLABLA','75018','paris','france','2015-01-08'),
+('4','vente4','vente de motos','72 T RUE BLABLA','75018','paris','france','2018-07-08'),
+('5','vente5','vente de motos','72 T RUE BLABLA','75018','paris','france','2010-01-08'),
+('6','vente6','vente de motos','72 T RUE BLABLA','75018','paris','france','2010-01-08'),
+('7','vente7','vente de motos','72 T RUE BLABLA','75018','paris','france','2018-01-08'),
+('8','vente8','vente de motos','72 T RUE BLABLA','75018','paris','france','2014-01-08'),
+('9','vente9','vente de motos','72 T RUE BLABLA','75018','paris','france','2011-01-08'),
+('10','vente10','vente de motos','72 T RUE BLABLA','75018','paris','france','2010-01-08'),
+('11','vente11','vente de motos','72 T RUE BLABLA','75018','paris','france','2018-08-08'),
+('12','vente12','vente de motos','72 T RUE BLABLA','75018','paris','france','2018-01-08'),
+('13','vente13','vente de motos','72 T RUE BLABLA','75018','paris','france','2010-01-08'),
+('14','vente14','vente de motos','72 T RUE BLABLA','75018','paris','france','1729-01-06'),
+('15','vente15','vente de motos','72 T RUE BLABLA','75018','paris','france','2018-01-08'),
+('16','vente16','vente de motos','72 T RUE BLABLA','75018','paris','france','2011-01-08'),
+('17','vente17','vente de motos','72 T RUE BLABLA','75018','paris','france','2018-01-08'),
+('18','vente18','vente de motos','72 T RUE BLABLA','75018','paris','france','2011-01-08'),
+('19','vente19','vente de motos','72 T RUE BLABLA','75018','paris','france','2018-01-08'),
+('20','vente10','vente de motos','72 T RUE BLABLA','75018','paris','france',CURRENT_TIMESTAMP),
+('21','vente21','vente de motos','72 T RUE BLABLA','75018','paris','france',CURRENT_TIMESTAMP),
+('22','vente22','vente de motos','72 T RUE BLABLA','75018','paris','france',CURRENT_TIMESTAMP),
+('23','vente23','vente de motos','72 T RUE BLABLA','75018','paris','france','2018-01-08'),
+('24','vente24','vente de motos','72 T RUE BLABLA','75018','paris','france','2011-01-08'),
+('25','vente25','vente de motos','72 T RUE BLABLA','75018','paris','france','2018-02-08');
 
 /* JE VEUX créer la requête pour créer un service et le proposer à la communauté */
 
@@ -80,7 +80,7 @@ WHERE id = 19;
 
 /* Story 16 */
 
-SELECT S.*, 
+SELECT SU.*, users.pseudo, S.name, S.description, S.address, S.city, S.cp, S.date_hour, S.more_info,
     (SELECT COUNT(SU.id)
     FROM services_users AS SU
     INNER JOIN users
@@ -90,8 +90,8 @@ FROM services_users AS SU
 INNER JOIN users 
 ON users.id = SU.id_user
 LEFT JOIN services AS S
-ON S.id_user = users.id
-WHERE users.id = 10
+ON SU.id_service = S.id
+WHERE SU.id_user = 10
 ORDER BY S.date_hour, S.city DESC, S.name ASC
 
 /* Story 17 */
@@ -114,3 +114,54 @@ WHERE id_user = 10
 ORDER BY date_hour ASC)
 ORDER BY S.date_hour, S.city DESC, S.name ASC
 LIMIT 1
+
+/* Story 18 */
+
+SELECT m.month,
+U.pseudo
+FROM (
+SELECT 01 AS
+MONTH
+UNION SELECT 02 AS
+MONTH
+UNION SELECT 03 AS
+MONTH
+UNION SELECT 04 AS
+MONTH
+UNION SELECT 05 AS
+MONTH
+UNION SELECT 06 AS
+MONTH
+UNION SELECT 07 AS
+MONTH
+UNION SELECT 08 AS
+MONTH
+UNION SELECT 09 AS
+MONTH
+UNION SELECT 10 AS
+MONTH
+UNION SELECT 11 AS
+MONTH
+UNION SELECT 12 AS
+MONTH
+) AS m
+LEFT JOIN services_users ON m.month = services_users.sign_date_hour
+LEFT JOIN users AS U ON services_users.id_user = U.id
+
+
+
+
+SELECT services.id as Mois, u.pseudo, COUNT(SU.id) AS participation
+FROM services_users AS SU 
+LEFT JOIN users as U
+ON SU.id_user = U.id
+
+WHERE SU.id_user=10
+GROUP BY MONTH(sign_date_hour)
+
+
+
+
+
+
+
